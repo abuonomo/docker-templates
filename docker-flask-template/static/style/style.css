@@ -1,6 +1,6 @@
 body {
-    background-color: lightblue;
-    margin: 20%;
+    background-color: #D9DFE8;
+    margin: 5% 20%;
 }
 
 .header img {
@@ -11,3 +11,4 @@ body {
     font-family: 'Montserrat', sans-serif;
     position: relative;
 }
+

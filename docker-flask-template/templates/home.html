@@ -1,8 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="static/style/style.css">
+    <script>
+    var methodname = "{{ methodname }}/"; // from render_template function input in app.py
+    var url = window.location.protocol + "//" + window.location.host + window.location.pathname + methodname;
+
+    $( document ).ready(function() {
+    $("#txt").val("This is a TEST of making letters LOWERCASE."); // requires jquery for this syntax
+    });
+
+    function doit() {
+      $("#loading").show(); // shows the loading gif while we wait for function to execute
+      setTimeout(function(){    }, 2000);
+
+      var txt = $("#txt").val();
+      var return_data = {"text": txt};
+
+      $.ajax({
+        type: "POST",
+        url: url,
+        contentType: "application/json",
+        data: JSON.stringify(return_data),
+        success: function(result) {
+          console.log(result);
+          $("#returnData").text(JSON.stringify(result, undefined, 2));
+          $("#loading").hide(); // hide the loading gif when function is done.
+            // this hiding must be done in this brackets because ajax POST requests are asynchronus with
+            // the rest of the script. This way, it only hides whent the response is received.
+        }
+      });
+    }
+
+    </script>
 </head>
 <body>
 
@@ -14,6 +46,20 @@
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+<br/>
+    <textarea rows="10" cols="70" id="txt" type="text" placeholder="text to tag"> </textarea>
+<br/>
+
+<button onclick="doit();">Run Service</button>
+
+<h2 class="returnBox">Return Data
+    <img id="loading" src="static/media/ajax-loader-blue.gif" style="display: none;">
+    <!--get this loading gif here http://www.ajaxload.info/-->
+</h2>
+
+<div class="return">
+    <pre id="returnData"></pre>
+</div>
 
 </body>
 </html>
