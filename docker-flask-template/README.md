@@ -21,7 +21,7 @@ This is a template for dockerized flask apps which run behind an nginx reverse p
      
     You should now be able to point to localhost:5001 with your browser and see the template landing page there. Now we have a functioning flask app which accesses static resources.
 
-# editing the template
+## editing the template
 
 1) Edit the api by changing [app.py](app.py).
 2) Change frontend by editing the [Jinja2 template](templates/home.html).
