@@ -20,6 +20,14 @@ This is a template for dockerized flask apps which run behind an nginx reverse p
     \* the 5001 can be change for your configuration, but the second number, 5000, is specific to the container's image and, therefore, must remain as 5000.
      
     You should now be able to point to localhost:5001 with your browser and see the template landing page there. Now we have a functioning flask app which accesses static resources.
+
+# editing the template
+
+1) Edit the api by changing [app.py](app.py).
+2) Change frontend by editing the [Jinja2 template](templates/home.html).
+
+
+## optional: reverse proxy
     
 5) Now we want to run the flask app behind a reverse proxy. Oftentimes, this reverse proxy will already be established for you. If this is the case, you may skip this step and simply ask your system administator to the tie your flask service into their reverse proxy. Otherwise, continue.
  
