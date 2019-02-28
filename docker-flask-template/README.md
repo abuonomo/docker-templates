@@ -19,7 +19,7 @@ This is a template for dockerized flask apps which run behind an nginx reverse p
     ```
     \* the 5001 can be change for your configuration, but the second number, 5000, is specific to the container's image and, therefore, must remain as 5000.
      
-    You should now be able to point to localhost:5001 with your browser and see the template landing page there. Now we have a functioning flask app which accesses static resources.
+    You should now be able to point to localhost:5001 with your browser and see the template landing page there. Now we have a functioning flask app which accesses static resources. There are default endpoints at `localhost:5001/hello` and `localhost:5001/blurgh/`.
 
 ## editing the template
 
