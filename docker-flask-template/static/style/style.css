@@ -12,3 +12,7 @@ body {
     position: relative;
 }
 
+.header h2 {
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+}
