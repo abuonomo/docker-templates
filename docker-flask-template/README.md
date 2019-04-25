@@ -15,7 +15,7 @@ This is a template for dockerized flask apps which run behind an nginx reverse p
     ```  
 4) Use the image to instantiate a container.
     ```bash
-    docker run -it --name flask_test -p 5001:5000 flask:template
+    docker run -it --name flask_test -p 5001:5000 flask:example
     ```
     \* the 5001 can be change for your configuration, but the second number, 5000, is specific to the container's image and, therefore, must remain as 5000.
      
