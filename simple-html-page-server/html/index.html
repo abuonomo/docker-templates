@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
-<link rel="stylesheet" href="styles.css">
+<link id="styles" rel="stylesheet" href="styles.css">
+<script>
+	var page_url = window.location.protocol + "//" + window.location.host + window.location.pathname;
+	document.getElementById("style").href = page_url + "/styles.css";
+</script> 
 <body>
 
 <h1>Success!</h1>
