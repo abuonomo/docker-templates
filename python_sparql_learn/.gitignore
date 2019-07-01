@@ -1,0 +1,4 @@
+.venv/*
+*.cer
+*.p7b
+*.json
