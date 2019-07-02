@@ -38,5 +38,5 @@ optional arguments:
 
 Example usage:
 ```
-python request_learn.py https://learn.analytics.nasa.gov STI admin password noca_fullpath.pem example_out.jso
+python request_learn.py https://learn.analytics.nasa.gov STI admin password noca_fullpath.pem example_out.json
 ```
