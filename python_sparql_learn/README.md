@@ -1,6 +1,7 @@
 # About
 
 Instructions on how to send SPARQL queries to https://learn.analytics.nasa.gov/ using python. 
+This script shows how to use the "subjects" dictionary to find higher order categories for STI keywords.
 
 ## Installation
 
@@ -20,17 +21,16 @@ pip install git+https://github.com/abuonomo/sparqlwrapper#egg=sparqlwrapper
 Help here:
 ```
 (.venv) ❯ python request_learn.py -h
-usage: request_learn.py [-h] u d n p c o
+usage: request_learn.py [-h] u n p c k
 
 Extracts info from SPARQL endpoint using example query.
 
 positional arguments:
   u           endpoint for api
-  d           the dictionary to query
   n           username for endpoint
   p           password for endpoint
   c           pem cert location for this url
-  o           output file for query
+  k           the keyword for which to find a broader category
 
 optional arguments:
   -h, --help  show this help message and exit
@@ -38,5 +38,5 @@ optional arguments:
 
 Example usage:
 ```
-python request_learn.py https://learn.analytics.nasa.gov STI admin password noca_fullpath.pem example_out.json
+python request_learn.py https://learn.analytics.nasa.gov admin password noca_fullpath.pem "Environmental Pollution"
 ```
