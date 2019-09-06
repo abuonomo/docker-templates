@@ -6,7 +6,7 @@
     <script>
         var page_url = window.location.protocol + "//" + window.location.host + window.location.pathname;
     </script>
-    <link rel="stylesheet" href="static/style/style.css">
+    <link id='style' rel="stylesheet" href="static/style/style.css">
 	<script>document.getElementById("style").href = page_url + "/static/style/style.css"</script>
     <script>
     var methodname = "{{ methodname }}/"; // from render_template function input in app.py
@@ -47,6 +47,40 @@
     &emsp;Docker Flask Template <span id="version">(service v{{ version }} | interface v{{ interface_version }})</span>
 </h1>
 
+<button class="accordion">Description</button>
+<div class="panel">
+    <p>
+        This service contains a single endpoint, &quot;<i>{{ root }}/{{ methodname }}/</i>&quot;,
+        The code for this test service is available <a href="https://developer.nasa.gov/DataSquad/docker_templates/">here</a>.
+    </p>
+</div>
+
+<button class="accordion">How to Use</button>
+<div class="panel">
+    <p>
+        You can access the endpoint using the interface below or by using standard web request technologies. For example, using <a href="https://curl.haxx.se/">curl</a>:
+    <div id="request">
+        <pre id="curl_1"></pre>
+    </div>
+    </p>
+    <script>document.getElementById("curl_1").innerHTML = "curl " + url + " -H 'Connection: keep-alive' -d \'{\"text\": \"This is an example text string.\"}\' --compressed" </script>
+</div>
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.display === "block") {
+      panel.style.display = "none";
+    } else {
+      panel.style.display = "block";
+    }
+  });
+}
+</script>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </p>
