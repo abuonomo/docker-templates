@@ -7,6 +7,8 @@ logging.basicConfig(level=logging.INFO)
 LOG = logging.getLogger(__name__)
 LOG.setLevel(logging.DEBUG)
 app = Flask(__name__)
+SERVICE_VERSION="0.0.1"
+INTERFACE_VERSION="0.0.1"
 
 METHOD = 'method'
 
@@ -18,7 +20,9 @@ def hello_world():
 @app.route('/')
 def home():
     LOG.debug('Hit landing page.')
-    return render_template('home.html', methodname=METHOD)
+    return render_template('home.html', methodname=METHOD, 
+                           version=SERVICE_VERSION,
+                           interface_version=INTERFACE_VERSION)
 
 
 @app.route(f"/{METHOD}/", methods=['POST'])
