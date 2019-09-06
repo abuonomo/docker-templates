@@ -3,10 +3,14 @@
 <head>
     <script src="https://code.jquery.com/jquery-1.11.3.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <script>
+        var page_url = window.location.protocol + "//" + window.location.host + window.location.pathname;
+    </script>
     <link rel="stylesheet" href="static/style/style.css">
+	<script>document.getElementById("style").href = page_url + "/static/style/style.css"</script>
     <script>
     var methodname = "{{ methodname }}/"; // from render_template function input in app.py
-    var url = window.location.protocol + "//" + window.location.host + window.location.pathname + methodname;
+    var url = page_url + methodname;
 
     $( document ).ready(function() {
     $("#txt").val("This is a TEST of making letters LOWERCASE."); // requires jquery for this syntax
