@@ -82,23 +82,39 @@ for (i = 0; i < acc.length; i++) {
 }
 </script>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-</p>
+<div class="background">
 
-<br/>
-    <textarea rows="10" cols="70" id="txt" type="text" placeholder="text to tag"> </textarea>
-<br/>
+<div class="clientBox">
+    <h2>Client</h2>
 
-<button onclick="doit();">Run Service</button>
+    <p class="side">
+        <label>request_id:</label>
+        <input id="request_id"></input>
+    </p>
 
-<h2 class="returnBox">Return Data
-    <img id="loading" src="static/media/ajax-loader-blue.gif" style="display: none;">
-    <!--get this loading gif here http://www.ajaxload.info/-->
-</h2>
+    <p class="side">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/>
+        <textarea rows="30" cols="65" id="txt" type="text" placeholder="text to tag"></textarea>
+        <br/>
+        <button onclick="doit();">Run Service</button>
+    </p>
 
-<div class="return">
-    <pre id="returnData"></pre>
 </div>
+
+<div class="clientBox">
+    <h2 class="returnBox">
+        <h2>Return Data<img id="loading" src="static/media/ajax-loader.gif"></h2>
+    </h2>
+    <div class="return">
+        <pre id="returnData"></pre>
+    </div>
+</div>
+
+</div>
+<footer>
+  <p>This is a footer. Maybe put an email contact here: <a href="mailto:someone@example.com">
+  someone@example.com</a>.</p>
+</footer>
 
 </body>
 </html>
