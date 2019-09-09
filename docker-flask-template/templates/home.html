@@ -88,13 +88,8 @@ for (i = 0; i < acc.length; i++) {
     <h2>Client</h2>
 
     <p class="side">
-        <label>request_id:</label>
-        <input id="request_id"></input>
-    </p>
-
-    <p class="side">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/>
-        <textarea rows="30" cols="65" id="txt" type="text" placeholder="text to tag"></textarea>
+        <textarea rows=100 id="txt" type="text" placeholder="text to tag"></textarea>
         <br/>
         <button onclick="doit();">Run Service</button>
     </p>
@@ -103,7 +98,7 @@ for (i = 0; i < acc.length; i++) {
 
 <div class="clientBox">
     <h2 class="returnBox">
-        <h2>Return Data<img id="loading" src="static/media/ajax-loader.gif"></h2>
+        <h2 id="return">Return Data &nbsp<img id="loading" src="static/media/ajax-loader.gif"></h2>
     </h2>
     <div class="return">
         <pre id="returnData"></pre>
