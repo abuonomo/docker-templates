@@ -31,7 +31,29 @@ def method():
     LOG.debug('Testing the method.')
     time.sleep(2)
     txt = data['text']
-    return txt.lower()
+    example_parameter = data['example_parameter']
+    try:
+        payload = {
+            'text_respose': txt.lower(),
+            'example_parameter_response': example_parameter,
+        }
+        return jsonify(
+            status=200,
+            api_version=SERVICE_VERSION,
+            interface_version=INTERFACE_VERSION,
+            payload=payload,
+        )
+    except Exception as ex:  # You probably don't want to capture everything like this does
+        ex_message  = f"{ex.__class__.__name__}: {str(ex)}"
+        LOG.exception(ex_message)
+        return jsonify(
+            code=500,
+            status='Internal Service Error',
+            messages=[ex_message],
+            api_version=SERVICE_VERSION,
+            interface_version=INTERFACE_VERSION,
+            payload=[],
+        )
 
 
 @app.route("/blurgh/")

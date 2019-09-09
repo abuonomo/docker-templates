@@ -13,6 +13,7 @@
     var url = page_url + methodname;
 
     $( document ).ready(function() {
+    $("#example_parameter").val(10); // requires jquery for this syntax
     $("#txt").val("This is a TEST of making letters LOWERCASE."); // requires jquery for this syntax
     });
 
@@ -20,8 +21,9 @@
       $("#loading").show(); // shows the loading gif while we wait for function to execute
       setTimeout(function(){    }, 2000);
 
+      var example_parameter = $("#example_parameter").val();
       var txt = $("#txt").val();
-      var return_data = {"text": txt};
+      var return_data = {"text": txt, "example_parameter": example_parameter};
 
       $.ajax({
         type: "POST",
@@ -86,6 +88,11 @@ for (i = 0; i < acc.length; i++) {
 
 <div class="clientBox">
     <h2>Client</h2>
+
+	<p class="side">
+        <label>example parameter:</label>
+        <input id="example_parameter"></input>
+    </p>
 
     <p class="side">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br/>
