@@ -2,6 +2,9 @@
 
 This is a template for dockerized flask apps which run behind an nginx reverse proxy. Essentially, if you want to run flask in docker, this template could save you many pathing headaches. There are many docker concepts which are will aid with understanding this template.
 
+The frontend looks like this:
+![frontend](frontend.png)
+
 # Installation
 
 1) Clone this repository.  
